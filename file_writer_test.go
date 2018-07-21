@@ -247,7 +247,6 @@ func TestCreateEmptyFileWithoutPermission(t *testing.T) {
 func TestFileAppend(t *testing.T) {
 	client := getClient(t)
 
-	baleet(t, "/_test/append/1.txt")
 	mkdirp(t, "/_test/append")
 	writer, err := client.Create("/_test/append/1.txt")
 	require.NoError(t, err)
@@ -284,7 +283,6 @@ func TestFileAppend(t *testing.T) {
 func TestFileAppendEmptyFile(t *testing.T) {
 	client := getClient(t)
 
-	baleet(t, "/_test/append/2.txt")
 	mkdirp(t, "/_test/append")
 	err := client.CreateEmptyFile("/_test/append/2.txt")
 	require.NoError(t, err)
